@@ -38,13 +38,13 @@ while IFS= read -r line; do
 	
 
     if echo "$owner" | grep -qE "your host"; then
-        owner="Livebox"
+        owner="Dummy company"
     else
         owner_dig=$(dig +short "$domain_name" NS)
 	    if echo "$owner_dig" | grep -qE "your host"; then
-	        owner="Livebox (via DNS)"
+	        owner="Dummy company (via DNS)"
         else
-            owner="Not Livebox"
+            owner="Not Dummy company"
         fi
     fi
 
